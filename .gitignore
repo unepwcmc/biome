@@ -33,7 +33,7 @@ platforms/wp8/*.csproj.user
 resources/signing
 
 # www
-www/node_modules
+node_modules
 www/dist/js/*
 www/dist/css/*
 www/dist/img/*
