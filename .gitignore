@@ -30,3 +30,8 @@ platforms/wp8/*.csproj.user
 
 # res
 resources/signing
+
+# www/dist
+www/dist/js/*
+www/dist/css/*
+www/dist/img/*
