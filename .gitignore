@@ -5,6 +5,7 @@
 platforms/ios/build/
 platforms/ios/www/
 platforms/ios/cordova/console.log
+platforms/ios/cordova/node_modules
 *.xcuserdatad
 
 # android
@@ -31,7 +32,8 @@ platforms/wp8/*.csproj.user
 # res
 resources/signing
 
-# www/dist
+# www
+www/node_modules
 www/dist/js/*
 www/dist/css/*
 www/dist/img/*
