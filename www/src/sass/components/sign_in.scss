@@ -1,0 +1,40 @@
+@import '../colors';
+@import '../util';
+
+@mixin sign-in {
+  @include full-screen;
+  background-color: $dark-blue;
+
+  .main-container {
+    padding-top: 50px;
+    color: $white;
+    height: 80%;
+    width: 100%;
+
+    text-align: center;
+
+    h1, h2 {
+      margin: 15px 0;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    fieldset {
+      border: 0;
+    }
+
+    input {
+      border: 0;
+      border-radius: 40px;
+      height: 40px;
+      width: 80%;
+      margin: 15px 0;
+    }
+
+    a {
+      font-family: 'Quicksand', sans-serif;
+      color: $green;
+      text-decoration: none;
+      font-weight: 500;
+    }
+  }
+}

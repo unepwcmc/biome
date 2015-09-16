@@ -1,0 +1,8 @@
+@import 'components/sign_in';
+@import url(https://fonts.googleapis.com/css?family=Quicksand:400,700|Open+Sans:400,300,600);
+
+html, body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+#signin { @include sign_in; }
