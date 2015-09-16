@@ -31,4 +31,7 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+    <feature name="WKWebViewPolyfill">
+        <param name="ios-package" value="WKWebViewPolyfill" />
+    </feature>
 </widget>
