@@ -3,15 +3,23 @@
 
 @mixin sign-in {
   @include full-screen;
+
   background-color: $dark-blue;
+  text-align: center;
+  color: $white;
+
+  a {
+    font-family: 'Quicksand', sans-serif;
+    color: $green;
+    text-decoration: none;
+    font-weight: 500;
+  }
 
   .main-container {
     padding-top: 50px;
-    color: $white;
     height: 80%;
     width: 100%;
 
-    text-align: center;
 
     h1, h2 {
       margin: 15px 0;
@@ -29,12 +37,9 @@
       width: 80%;
       margin: 15px 0;
     }
+  }
 
-    a {
-      font-family: 'Quicksand', sans-serif;
-      color: $green;
-      text-decoration: none;
-      font-weight: 500;
-    }
+  footer {
+    border-top: solid 1px $white;
   }
 }

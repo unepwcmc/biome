@@ -1,5 +1,14 @@
+@font-face {
+  font-family: "Quicksand";
+  src: url('../fonts/Quicksand-Regular.ttf');/* relative path from the css file */
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url('../fonts/OpenSans-Regular.ttf');/* relative path from the css file */
+}
+
 @import 'components/sign_in';
-@import url(https://fonts.googleapis.com/css?family=Quicksand:400,700|Open+Sans:400,300,600);
 
 html, body {
   font-family: 'Open Sans', sans-serif;
