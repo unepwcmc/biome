@@ -3,22 +3,39 @@
 @mixin projects-list {
   @include full-screen;
 
-  .header {
-    background-color: $green;
-    height: 50px;
-    ul {
-      list-style: none;
-      padding-top: 13px;
-      li {
-        display: inline-block;
-        width: 120px;
-        color: white;
-        &.title {
-          font-weight: bold;
-        }
-      }
+  header {
+    display: -webkit-flex;
+    -webkit-justify-content: center;
+    -webkit-align-items: center;
+    background-color: #12C895;
+    height: 80px;
+    padding-top: 20px;
+    color: white;
+    box-sizing: border-box;
+    text-align: center;
+
+    .title {
+      margin: 0;
+      padding: 0;
+      -webkit-flex: 4 0px;
+    }
+
+    button {
+      font-family: 'Quicksand', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      -webkit-appearance: none;
+      -webkit-flex: 1 0px;
+      color: inherit;
+      border: 0;
+      padding: 0 20px;
+      margin: 0;
+      line-height: 60px;
+
+      i { height: 100%; }
     }
   }
+
   .search-bar {
     height: 120px;
     border-bottom: 1px $medium-light-grey solid;

@@ -20,6 +20,8 @@
         <allow-intent href="market:*" />
     </platform>
     <platform name="ios">
+        <preference name="webviewbounce" value="false" />
+        <preference name="DisallowOverscroll" value="true" />
         <!-- iPhone 6 Plus  -->
         <icon src="res/ios/icon.png" width="180" height="180" />
         <!-- iOS 7.0+ -->

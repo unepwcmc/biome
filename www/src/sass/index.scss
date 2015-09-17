@@ -34,6 +34,11 @@
 @import 'components/sign_in';
 @import 'components/projects_list';
 
+*:not(input,textarea) {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+}
+
 html, body {
   margin-top: 2px;
   font-family: 'Open Sans', sans-serif;
