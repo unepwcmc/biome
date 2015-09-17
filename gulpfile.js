@@ -22,6 +22,11 @@ var paths = {
 };
 
 
+function handleError(err) {
+  gutil.log(err, 'Browserify Error');
+  this.emit('end');
+};
+
 gulp.task('coffee', function () {
   var b = browserify({
     entries: paths.coffee_entry,
@@ -30,7 +35,7 @@ gulp.task('coffee', function () {
   });
 
   return b.bundle()
-    .on('error', gutil.log.bind(gutil, 'Browserify Error'))
+    .on('error', handleError)
     .pipe(source('index.js'))
     .pipe(buffer())
     .pipe(gulp.dest(paths.js));
