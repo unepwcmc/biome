@@ -62,10 +62,10 @@
         }
     },
     "installed_plugins": {
-        "cordova-plugin-whitelist": {
+        "com.telerik.plugins.wkwebview": {
             "PACKAGE_NAME": "io.cordova.hellocordova"
         },
-        "com.telerik.plugins.wkwebview": {
+        "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "io.cordova.hellocordova"
         }
     },

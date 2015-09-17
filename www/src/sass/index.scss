@@ -8,10 +8,12 @@
   src: url('../fonts/OpenSans-Regular.ttf');/* relative path from the css file */
 }
 
-@import 'components/sign_in';
+@import 'components/sign_in'; 
+@import 'components/projects_list';
 
 html, body {
   font-family: 'Open Sans', sans-serif;
 }
 
-#signin { @include sign_in; }
+#sign_in { @include sign_in; }
+#projects_list { @include projects_list; }
