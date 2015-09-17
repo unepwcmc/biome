@@ -16,7 +16,9 @@ var paths = {
   sass: './www/src/sass/**/*',
   coffee_entry: './www/src/coffee/index.coffee',
   js: './www/dist/js/',
-  css: './www/dist/css/'
+  css: './www/dist/css/',
+  fonts_dist: './www/dist/fonts/',
+  fonts_src: './www/src/fonts/**/*'
 };
 
 
@@ -34,6 +36,11 @@ gulp.task('coffee', function () {
     .pipe(gulp.dest(paths.js));
 });
 
+gulp.task('fonts', function() {
+  gulp.src(paths.fonts_src)
+    .pipe(gulp.dest(paths.fonts_dist));
+});
+
 gulp.task('sass', function () {
   gulp.src(paths.sass)
     .pipe(sourcemaps.init())
@@ -45,6 +52,7 @@ gulp.task('sass', function () {
 gulp.task('watch', function() {
   gulp.watch(paths.coffee, ['coffee']);
   gulp.watch(paths.sass, ['sass']);
+  gulp.watch(paths.fonts_src, ['fonts']);
 });
 
-gulp.task('default', ['watch', 'coffee', 'sass']);
+gulp.task('default', ['watch', 'coffee', 'sass', 'fonts']);
