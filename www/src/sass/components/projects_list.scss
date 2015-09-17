@@ -1,6 +1,6 @@
 @mixin projects-list {
   .header {
-    background-color: #12C895;
+    background-color: $green;
     height: 50px;
     ul {
       list-style: none;
@@ -14,5 +14,58 @@
         }
       }
     } 
+  }
+  .search-bar {
+    height: 120px;
+    border-bottom: 1px $medium-light-grey solid;
+    .search-form {
+      background-color: $light-grey;
+      border-top-left-radius: 2em;
+      border-bottom-left-radius: 2em;
+      border: $medium-light-grey 1px solid;
+      -webkit-appearance: none;
+      margin: 35px 0px 0px 0px;
+      height: 40px;
+      width: 220px;
+      font-size: 15px;
+      padding-left: 20px;
+      float: left;
+      border-right: 0;
+    }
+    .search-button {
+      width: 100px;
+      height: 50px;
+      font-size: 15px;
+      background-color: $green;
+      border-top-right-radius: 2em;
+      border-bottom-right-radius: 2em;
+      border: $medium-light-grey 1px solid;
+      color: $white;
+      font-weight: bold;
+      margin: 35px 0 0 0;
+      float: left;
+    }
+  }
+  .num-items { padding: 25px 25px 15px 25px; }
+  .results {
+    height: 410px;
+    overflow: hidden;
+    overflow-y: scroll;
+    ul {
+      list-style: none;
+      padding: 0 25px;
+    }
+    li { height: 100px; }
+    .image {
+      width: 60px;
+      height: 60px;
+      border-radius: 30px;
+      background-color: $medium-light-grey;
+      float: left;
+    }
+    .result-details {
+      margin-left: 85px;
+      .title { font-weight: bold; }
+    }
   }
 }
