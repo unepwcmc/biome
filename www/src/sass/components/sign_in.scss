@@ -15,31 +15,38 @@
     font-weight: 500;
   }
 
-  .main-container {
-    padding-top: 50px;
-    height: 80%;
+  padding: 5%;
+
+  h1, h5 {
+    margin: 40px 0;
+  }
+
+  fieldset {
+    border: 0;
+    padding: 0;
+    padding-top: 10px;
+  }
+
+  input {
+    box-sizing: border-box;
+    padding-left: 20px;
+    border: 0;
+    border-radius: 40px;
+    height: 40px;
     width: 100%;
+    margin: 15px 0;
+  }
 
-
-    h1, h2 {
-      margin: 15px 0;
-      font-family: 'Quicksand', sans-serif;
-    }
-
-    fieldset {
-      border: 0;
-    }
-
-    input {
-      border: 0;
-      border-radius: 40px;
-      height: 40px;
-      width: 80%;
-      margin: 15px 0;
-    }
+  button {
+    @include button;
+    width: 100%;
   }
 
   footer {
+    position: absolute;
+    bottom: 10%;
+    left:0;
+    width: 100%;
     border-top: solid 1px $white;
   }
 }
