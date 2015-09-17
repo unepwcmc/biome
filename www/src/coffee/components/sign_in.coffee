@@ -3,7 +3,7 @@ sign_in_template = require('../templates/sign_in.html.hbs')
 
 module.exports = class SignInComponent
   constructor: ->
-    @$el = $(Confing.main_container)
+    @$el = $(Config.main_container)
 
   show: ->
     @$el.html(sign_in_template())

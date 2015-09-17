@@ -1,11 +1,15 @@
+@import '../util';
+
 @mixin projects-list {
+  @include full-screen;
+
   .header {
     background-color: $green;
     height: 50px;
     ul {
       list-style: none;
       padding-top: 13px;
-      li { 
+      li {
         display: inline-block;
         width: 120px;
         color: white;
@@ -13,7 +17,7 @@
           font-weight: bold;
         }
       }
-    } 
+    }
   }
   .search-bar {
     height: 120px;
