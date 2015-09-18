@@ -1,0 +1,15 @@
+@mixin navigation {
+  html, body, #main_container, #map {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  @include _map;
+}
+
+@mixin _map {
+  .leaflet-top { top: 30px; }
+  .leaflet-right { right: 10px; }
+}
