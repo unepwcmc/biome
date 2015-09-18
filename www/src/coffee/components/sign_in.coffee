@@ -9,7 +9,6 @@ module.exports = class SignInComponent
   show: ->
     @$el.html(sign_in_template())
     @addEventListeners()
-    Promise.resolve()
 
   addEventListeners: ->
     new Promise( (resolve, reject) =>
