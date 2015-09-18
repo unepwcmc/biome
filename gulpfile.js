@@ -8,17 +8,19 @@ var gulp = require('gulp'),
     coffeeify = require('coffeeify'),
     sass = require('gulp-sass'),
     sourcemaps = require('gulp-sourcemaps'),
+    coffeelint = require('gulp-coffeelint'),
     handlebars_transform = require('browserify-handlebars');
 
 // add custom browserify options here
 var paths = {
-  coffee: './www/src/coffee/**/*',
+  coffee: './www/src/coffee/**/*.coffee',
   sass: './www/src/sass/**/*',
   coffee_entry: './www/src/coffee/index.coffee',
   js: './www/dist/js/',
   css: './www/dist/css/',
   fonts_dist: './www/dist/fonts/',
-  fonts_src: './www/src/fonts/**/*'
+  fonts_src: './www/src/fonts/**/*',
+  coffeelint: './coffeelint.json'
 };
 
 
@@ -41,6 +43,13 @@ gulp.task('coffee', function () {
     .pipe(gulp.dest(paths.js));
 });
 
+
+gulp.task('lint', function () {
+  return gulp.src(paths.coffee)
+    .pipe(coffeelint(paths.coffeelint))
+    .pipe(coffeelint.reporter())
+});
+
 gulp.task('fonts', function() {
   gulp.src(paths.fonts_src)
     .pipe(gulp.dest(paths.fonts_dist));
@@ -55,9 +64,9 @@ gulp.task('sass', function () {
 });
 
 gulp.task('watch', function() {
-  gulp.watch(paths.coffee, ['coffee']);
+  gulp.watch(paths.coffee, ['lint', 'coffee']);
   gulp.watch(paths.sass, ['sass']);
   gulp.watch(paths.fonts_src, ['fonts']);
 });
 
-gulp.task('default', ['watch', 'coffee', 'sass', 'fonts']);
+gulp.task('default', ['watch', 'lint', 'coffee', 'sass', 'fonts']);
