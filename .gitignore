@@ -37,3 +37,4 @@ node_modules
 www/dist/js/*
 www/dist/css/*
 www/dist/img/*
+www/src/coffee/config.coffee
