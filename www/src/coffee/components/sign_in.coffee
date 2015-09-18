@@ -8,19 +8,19 @@ module.exports = class SignInComponent
 
   show: ->
     @$el.html(sign_in_template())
-    @addEventListeners()
+    @add_event_listeners()
 
-  addEventListeners: ->
+  add_event_listeners: ->
     new Promise( (resolve, reject) =>
       @$el.find('form').submit( (ev) =>
         ev.preventDefault()
         $form_el = $(ev.target)
 
-        @submitForm($form_el).then(resolve, reject)
+        @submit_form($form_el).then(resolve, reject)
       )
     )
 
-  submitForm: ($form_el) ->
+  submit_form: ($form_el) ->
     new Promise( (resolve, reject) ->
       $.ajax(
         url: Config.sign_in_url,

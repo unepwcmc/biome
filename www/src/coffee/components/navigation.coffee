@@ -12,8 +12,9 @@ module.exports = class NavigationComponent
   addMap: ->
     L.mapbox.accessToken = Config.mapbox_token
 
-    @map = L.mapbox
-      .map(@$el.attr('id'), Config.mapbox_layer, attributionControl: false)
-      .setView([14.5278, 41.0229], 9)
-    @map.zoomControl.setPosition('topright')
-    @map.attributionControl.setPosition('topright')
+    @map = L.mapbox.map(
+      'map', Config.mapbox_layer,
+      attributionControl: false, zoomControl: false
+    ).setView(
+      [14.5278, 41.0229], 9
+    )
