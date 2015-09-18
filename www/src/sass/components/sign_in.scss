@@ -2,6 +2,10 @@
 @import '../util';
 
 @mixin sign-in {
+  #sign_in { @include _sign-in; }
+}
+
+@mixin _sign-in {
   @include full-screen;
 
   background-color: $dark-blue;

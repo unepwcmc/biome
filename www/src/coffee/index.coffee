@@ -1,12 +1,13 @@
 attachFastClick = require('fastclick')
 attachFastClick(document.body)
 
+require('mapbox.js')
+
 SignInComponent = require('./components/sign_in.coffee')
 ProjectsListComponent = require('./components/projects_list.coffee')
 
 document.addEventListener('deviceready', (e) ->
   $.support.cors = true
-
   sign_in = new SignInComponent()
   sign_in.show()
 

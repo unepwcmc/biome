@@ -2,6 +2,10 @@
 @import '../colors';
 
 @mixin projects-list {
+  #projects_list { @include _projects-list; }
+}
+
+@mixin _projects-list {
   @include full-screen;
 
   display: -webkit-flex;
