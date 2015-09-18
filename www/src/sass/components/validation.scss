@@ -2,6 +2,7 @@
 @import '../util';
 
 @mixin validation {
+  #validation_form { display: none; }
   .validation-header { 
     ul { 
       list-style: none;

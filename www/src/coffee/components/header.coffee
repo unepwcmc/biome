@@ -13,9 +13,16 @@ module.exports = class HeaderComponent
 
   add_event_listener: ->
     @menu_listener()
+    @validation_mode_listener()
 
   menu_listener: ->
     $('.menu').on('click', (e) ->
       e.preventDefault()
       new ProjectsListComponent().show()
+    )
+
+  validation_mode_listener: ->
+    $('.edit').on('click', (e) ->
+      e.preventDefault()
+      $('#validation_form').slideToggle()
     )
