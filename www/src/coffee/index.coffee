@@ -11,12 +11,5 @@ NavigationComponent = require('./components/navigation.coffee')
 document.addEventListener('deviceready', (e) ->
   $.support.cors = true
 
-  new SignInComponent().show().then( (user) ->
-    new HeaderComponent().show()
-    new ProjectsListComponent(user).show()
-  ).then( (project) ->
-    new NavigationComponent(null, project).show()
-  ).catch(
-    console.error
-  )
+  new SignInComponent().show()
 )

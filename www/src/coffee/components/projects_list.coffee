@@ -1,5 +1,6 @@
 Promise = require('bluebird')
 Config = require('../config.coffee')
+NavigationComponent = require('./navigation.coffee')
 
 module.exports = class ProjectsListComponent
   TEMPLATE = require('../templates/projects_list.html.hbs')
@@ -9,7 +10,6 @@ module.exports = class ProjectsListComponent
 
   show: ->
     @$el.html(TEMPLATE())
-
-    new Promise( (resolve, reject) =>
-      @$el.find('.results li').click(resolve)
+    @$el.find('.results li').click( ->
+      new NavigationComponent().show()
     )
