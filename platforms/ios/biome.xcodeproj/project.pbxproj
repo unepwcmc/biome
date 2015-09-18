@@ -49,6 +49,8 @@
 		DD915683E3AB4FE498C2F8D0 /* CDVWebViewOperationsDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6179B212546745F0AF2F0114 /* CDVWebViewOperationsDelegate.m */; };
 		05C41B10689C4F61ACABFFA5 /* CDVWebViewUIDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B204B4F99A99457C97AFAE86 /* CDVWebViewUIDelegate.m */; };
 		0D1A7825F55040C9850E618C /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BA7E95D40A84CD38FA2FB04 /* WebKit.framework */; };
+		E57AECDBBD72458797E884A9 /* CDVSplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = D03457BAA5B84C5297076D1E /* CDVSplashScreen.m */; };
+		B989681CC26348CC9C8FEC89 /* CDVViewController+SplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 7908A5E9909940568780B2B2 /* CDVViewController+SplashScreen.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +131,10 @@
 		F502AD3DCFC7406783977AB8 /* CDVWebViewOperationsDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVWebViewOperationsDelegate.h"; path = "com.telerik.plugins.wkwebview/CDVWebViewOperationsDelegate.h"; sourceTree = "<group>"; fileEncoding = 4; };
 		09D93922069E478D961FE28B /* CDVWebViewUIDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVWebViewUIDelegate.h"; path = "com.telerik.plugins.wkwebview/CDVWebViewUIDelegate.h"; sourceTree = "<group>"; fileEncoding = 4; };
 		1BA7E95D40A84CD38FA2FB04 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "WebKit.framework"; path = "System/Library/Frameworks/WebKit.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
+		D03457BAA5B84C5297076D1E /* CDVSplashScreen.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVSplashScreen.m"; path = "cordova-plugin-splashscreen/CDVSplashScreen.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		7908A5E9909940568780B2B2 /* CDVViewController+SplashScreen.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVViewController+SplashScreen.m"; path = "cordova-plugin-splashscreen/CDVViewController+SplashScreen.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		BE97BDD61A574D788AD5C757 /* CDVSplashScreen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVSplashScreen.h"; path = "cordova-plugin-splashscreen/CDVSplashScreen.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		0DA1358450EB4CABAF6927F6 /* CDVViewController+SplashScreen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVViewController+SplashScreen.h"; path = "cordova-plugin-splashscreen/CDVViewController+SplashScreen.h"; sourceTree = "<group>"; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +253,10 @@
 				3E1E79651BF54AAB89776C7E /* ReroutingUIWebView.h */,
 				F502AD3DCFC7406783977AB8 /* CDVWebViewOperationsDelegate.h */,
 				09D93922069E478D961FE28B /* CDVWebViewUIDelegate.h */,
+				D03457BAA5B84C5297076D1E /* CDVSplashScreen.m */,
+				7908A5E9909940568780B2B2 /* CDVViewController+SplashScreen.m */,
+				BE97BDD61A574D788AD5C757 /* CDVSplashScreen.h */,
+				0DA1358450EB4CABAF6927F6 /* CDVViewController+SplashScreen.h */,
 			);
 			name = Plugins;
 			path = "biome/Plugins";
@@ -436,6 +446,8 @@
 				384FA336B76543CABC663D75 /* ReroutingUIWebView.m in Sources */,
 				DD915683E3AB4FE498C2F8D0 /* CDVWebViewOperationsDelegate.m in Sources */,
 				05C41B10689C4F61ACABFFA5 /* CDVWebViewUIDelegate.m in Sources */,
+				E57AECDBBD72458797E884A9 /* CDVSplashScreen.m in Sources */,
+				B989681CC26348CC9C8FEC89 /* CDVViewController+SplashScreen.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

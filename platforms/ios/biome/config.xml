@@ -17,6 +17,11 @@
     <feature name="WKWebViewPolyfill">
         <param name="ios-package" value="WKWebViewPolyfill" />
     </feature>
+    <feature name="SplashScreen">
+        <param name="ios-package" value="CDVSplashScreen" />
+        <param name="onload" value="true" />
+    </feature>
+    <preference name="SplashScreen" value="res/ios/splashscreen.png" />
     <preference name="webviewbounce" value="false" />
     <preference name="DisallowOverscroll" value="true" />
     <icon height="180" src="res/ios/icon.png" width="180" />
@@ -38,11 +43,11 @@
     <allow-intent href="itms-apps:*" />
     <name>biome</name>
     <description>
-        A better tool for in-situ validation
-    </description>
+    A better tool for in-situ validation
+  </description>
     <author email="informatics@unep-wcmc.org" href="http://unep-wcmc.org">
-      UNEP WCMC
-    </author>
+    UNEP WCMC
+  </author>
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
