@@ -1,3 +1,6 @@
+@import 'header';
+@import '../util';
+
 @mixin navigation {
   html, body, #main_container, #map {
     margin: 0;
@@ -6,10 +9,25 @@
     height: 100%;
   }
 
+  @include header;
   @include _map;
+
+  #navigation { @include _navigation; }
 }
 
 @mixin _map {
   .leaflet-top { top: 30px; }
   .leaflet-right { right: 10px; }
+}
+
+@mixin _navigation {
+  @include full-screen;
+
+  @include header;
+
+  display: -webkit-flex;
+  -webkit-flex-direction: column;
+  -webkit-align-items: stretch;
+  -webkit-justify-content: flex-start;
+
 }

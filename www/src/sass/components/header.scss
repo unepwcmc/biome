@@ -1,0 +1,39 @@
+@mixin header {
+  header { @include _header; }
+}
+
+@mixin _header {
+  box-sizing: border-box;
+  display: -webkit-flex;
+  -webkit-justify-content: center;
+  -webkit-align-items: center;
+  text-align: center;
+
+  padding-top: 20px;
+  height: 80px;
+
+  background-color: $green;
+  color: $white;
+
+  .title {
+    margin: 0;
+    padding: 0;
+    -webkit-flex: 4 0px;
+  }
+
+  button {
+    i { height: 100%; }
+
+    font-family: 'Quicksand', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    -webkit-appearance: none;
+    -webkit-flex: 1 0px;
+    color: inherit;
+    border: 0;
+    padding: 0 20px;
+    margin: 0;
+    line-height: 60px;
+  }
+}
+

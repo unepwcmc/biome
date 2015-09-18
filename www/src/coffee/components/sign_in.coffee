@@ -1,13 +1,14 @@
 Promise = require('bluebird')
 Config = require('../config.coffee')
-sign_in_template = require('../templates/sign_in.html.hbs')
 
 module.exports = class SignInComponent
+  TEMPLATE = require('../templates/sign_in.html.hbs')
+
   constructor: ->
     @$el = $(Config.main_container)
 
   show: ->
-    @$el.html(sign_in_template())
+    @$el.html(TEMPLATE())
     @add_event_listeners()
 
   add_event_listeners: ->

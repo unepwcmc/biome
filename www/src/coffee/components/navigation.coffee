@@ -1,13 +1,17 @@
 Config = require('../config.coffee')
-navigation_template = require('../templates/navigation.html.hbs')
+LayersControl = require('../templates/navigation.html.hbs')
 
 module.exports = class NavigationComponent
+  TEMPLATE = require('../templates/navigation.html.hbs')
+
   constructor: (@user, @project) ->
     @$el = $(Config.main_container)
 
   show: ->
-    @$el.html(navigation_template())
+    @$el.html(TEMPLATE())
+
     @addMap()
+    @addLayersToolbox()
 
   addMap: ->
     L.mapbox.accessToken = Config.mapbox_token
@@ -18,3 +22,6 @@ module.exports = class NavigationComponent
     ).setView(
       [14.5278, 41.0229], 9
     )
+
+  addLayersToolbox: ->
+
