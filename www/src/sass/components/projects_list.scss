@@ -1,18 +1,26 @@
 @import '../util';
+@import '../colors';
 
 @mixin projects-list {
   @include full-screen;
 
+  display: -webkit-flex;
+  -webkit-flex-direction: column;
+  -webkit-align-items: stretch;
+  -webkit-justify-content: flex-start;
+
   header {
+    box-sizing: border-box;
     display: -webkit-flex;
     -webkit-justify-content: center;
     -webkit-align-items: center;
-    background-color: #12C895;
-    height: 80px;
-    padding-top: 20px;
-    color: white;
-    box-sizing: border-box;
     text-align: center;
+
+    padding-top: 20px;
+    height: 80px;
+
+    background-color: $green;
+    color: $white;
 
     .title {
       margin: 0;
@@ -21,6 +29,8 @@
     }
 
     button {
+      i { height: 100%; }
+
       font-family: 'Quicksand', sans-serif;
       font-size: 18px;
       font-weight: 700;
@@ -31,30 +41,32 @@
       padding: 0 20px;
       margin: 0;
       line-height: 60px;
-
-      i { height: 100%; }
     }
   }
 
   .search-bar {
+    text-align: center;
     height: 120px;
+    line-height: 120px;
+
     border-bottom: 1px $medium-light-grey solid;
+
     .search-form {
       background-color: $light-grey;
       border-top-left-radius: 2em;
       border-bottom-left-radius: 2em;
-      border: $medium-light-grey 1px solid;
+      border: $light-grey 1px solid;
       -webkit-appearance: none;
-      margin: 35px 0px 0px 0px;
       height: 40px;
-      width: 220px;
+      width: 55%;
       font-size: 15px;
       padding-left: 20px;
-      float: left;
       border-right: 0;
+      margin-right:0;
     }
+
     .search-button {
-      width: 100px;
+      width: 23%;
       height: 50px;
       font-size: 15px;
       background-color: $green;
@@ -63,20 +75,37 @@
       border: $medium-light-grey 1px solid;
       color: $white;
       font-weight: bold;
-      margin: 35px 0 0 0;
-      float: left;
+      margin-left: -5px;
     }
   }
+
   .num-items { padding: 25px 25px 15px 25px; }
+
+  .search-results {
+    -webkit-flex: 1 0px;
+    overflow: scroll;
+  }
+
   .results {
     height: 410px;
-    overflow: hidden;
-    overflow-y: scroll;
+
     ul {
       list-style: none;
       padding: 0 25px;
     }
-    li { height: 100px; }
+
+    li {
+      display:block;
+      margin: 5px 0;
+      padding: 20px 13px;
+      border-radius: 5px;
+
+      &:active {
+        background-color: $green;
+        color: white;
+      }
+    }
+
     .image {
       width: 60px;
       height: 60px;
@@ -84,6 +113,7 @@
       background-color: $medium-light-grey;
       float: left;
     }
+
     .result-details {
       margin-left: 85px;
       .title { font-weight: bold; }

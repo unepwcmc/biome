@@ -1,3 +1,6 @@
+attachFastClick = require('fastclick')
+attachFastClick(document.body)
+
 SignInComponent = require('./components/sign_in.coffee')
 ProjectsListComponent = require('./components/projects_list.coffee')
 
