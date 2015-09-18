@@ -1,0 +1,24 @@
+@import '../colors';
+@import '../util';
+
+@mixin validation {
+  .validation-header { 
+    ul { 
+      list-style: none;
+      li {
+        display: inline;
+        &.title {
+          font-size: 16px;
+          font-weight: bold;
+        }
+        &.coordinates {
+          float: right;
+          margin-right: 30px;
+        }
+      }
+    }
+  }   
+  .validators {
+    ul { list-style: none; }
+  }
+} 

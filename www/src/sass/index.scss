@@ -2,6 +2,7 @@
 @import 'components/sign_in';
 @import 'components/projects_list';
 @import 'components/navigation';
+@import 'components/validation';
 
 *:not(input,textarea) {
     -webkit-touch-callout: none;
@@ -17,3 +18,4 @@ html, body {
 @include sign-in;
 @include projects-list;
 @include navigation;
+@include validation;
