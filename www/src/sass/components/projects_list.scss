@@ -7,9 +7,6 @@
 }
 
 @mixin _projects-list {
-  @include full-screen;
-
-  @include header;
 
   display: -webkit-flex;
   -webkit-flex-direction: column;

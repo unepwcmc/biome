@@ -6,6 +6,7 @@
   @include _map;
 
   #navigation { @include _navigation; }
+  html, body { margin: 0; padding: 0; }
 }
 
 @mixin _map {
