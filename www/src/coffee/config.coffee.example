@@ -2,4 +2,5 @@ module.exports = {
   sign_in_url: 'http://localhost:3000/users/sign_in'
   main_container: '#main_container'
   mapbox_token: 'the_token'
+  mapbox_layer: 'sample.1234'
 }
