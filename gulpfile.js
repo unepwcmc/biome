@@ -13,13 +13,19 @@ var gulp = require('gulp'),
 
 // add custom browserify options here
 var paths = {
+  // src
   coffee: './www/src/coffee/**/*.coffee',
-  sass: './www/src/sass/**/*',
   coffee_entry: './www/src/coffee/index.coffee',
+  coffee_and_hbs: './www/src/coffee/**/*',
+  sass: './www/src/sass/**/*',
+  fonts_src: './www/src/fonts/**/*',
+
+  // dist
   js: './www/dist/js/',
   css: './www/dist/css/',
   fonts_dist: './www/dist/fonts/',
-  fonts_src: './www/src/fonts/**/*',
+
+  // extra
   coffeelint: './coffeelint.json'
 };
 
@@ -64,7 +70,8 @@ gulp.task('sass', function () {
 });
 
 gulp.task('watch', function() {
-  gulp.watch(paths.coffee, ['lint', 'coffee']);
+  gulp.watch(paths.coffee_and_hbs, ['coffee']);
+  gulp.watch(paths.coffee, ['lint']);
   gulp.watch(paths.sass, ['sass']);
   gulp.watch(paths.fonts_src, ['fonts']);
 });
