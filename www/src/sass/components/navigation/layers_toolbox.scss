@@ -1,0 +1,41 @@
+@mixin layers-toolbox {
+  .layers-toolbox { @include _layers-toolbox; }
+}
+
+@mixin _layers-toolbox {
+  display: none;
+
+  -webkit-order: 5;
+  white-space: nowrap;
+  overflow-x: scroll;
+
+  button {
+    display: inline-block;
+    -webkit-appearance: none;
+
+    text-align: center;
+    font-weight: 700;
+    text-transform: lowercase;
+    font-family: 'Quicksand' sans-serif;
+
+    padding: 10px 0px;
+    margin-right: -4px;
+    width: 25%;
+    color: $dark-blue;
+
+    border: 0;
+    border-right: solid 1px transparentize($dark-blue, 0.9);
+
+    &.active {
+      background-color: transparentize($green, 0.84);
+    }
+
+    img {
+      height: 60px;
+      opacity: 0.8;
+      padding: 0 15px;
+    }
+
+    p { font: inherit; }
+  }
+}

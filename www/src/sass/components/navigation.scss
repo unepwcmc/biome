@@ -1,4 +1,6 @@
 @import 'header';
+@import 'navigation/layers_toolbox';
+
 @import '../util';
 @import '../colors';
 
@@ -11,56 +13,25 @@
 
 @mixin _navigation {
   @include full-screen;
-  padding-bottom: $header-height;
+  @include ui-elements;
 
   display: -webkit-flex;
   -webkit-flex-direction: column;
   -webkit-align-items: stretch;
   -webkit-justify-content: flex-start;
 
-
-  @include ui-elements;
+  padding-bottom: $header-height;
 }
 
 @mixin ui-elements {
+  @include layers-toolbox;
+
   #validation_form    { -webkit-order: 2; }
   .validation-buttons { -webkit-order: 3; }
 
   .layers-button {
     @include slab-button(100%, $white, $dark-blue);
     -webkit-order: 4;
-  }
-
-  .layers-toolbox {
-    display: none;
-
-    -webkit-order: 5;
-    white-space: nowrap;
-    overflow-x: scroll;
-
-    button {
-      -webkit-appearance: none;
-      border: 0;
-      padding: 0;
-
-      img {
-        height: 60px;
-        opacity: 0.8;
-        background-color: #2a2a2a;
-        padding: 0 15px;
-      }
-
-      p { font: inherit; }
-
-      display: inline-block;
-      margin: 10px;
-      width: 25%;
-
-      color: $green;
-      text-align: center;
-      font-weight: 700;
-      font-family: 'Quicksand' sans-serif;
-    }
   }
 }
 
