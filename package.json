@@ -22,8 +22,11 @@
     "gulp-sourcemaps": "^1.5.2",
     "gulp-util": "^3.0.6",
     "handlebars": "^4.0.2",
+    "jquery-touchswipe": "^1.6.7",
+    "leaflet-usermarker": "^1.0.0",
     "mapbox": "^0.8.2",
     "mapbox.js": "^2.2.2",
+    "touchswipe": "^1.6.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
   }
