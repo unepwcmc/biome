@@ -1,28 +1,81 @@
 @import 'header';
 @import '../util';
+@import '../colors';
 
 @mixin navigation {
   @include header;
   @include _map;
 
   #navigation { @include _navigation; }
-  html, body { margin: 0; padding: 0; }
-}
-
-@mixin _map {
-  #map { height: 100%; }
-  .leaflet-top { top: 30px; }
-  .leaflet-right { right: 10px; }
 }
 
 @mixin _navigation {
   @include full-screen;
-
-  @include header;
+  padding-bottom: $header-height;
 
   display: -webkit-flex;
   -webkit-flex-direction: column;
   -webkit-align-items: stretch;
   -webkit-justify-content: flex-start;
 
+
+  @include ui-elements;
 }
+
+@mixin ui-elements {
+  #validation_form    { -webkit-order: 2; }
+  .validation-buttons { -webkit-order: 3; }
+
+  .layers-button {
+    @include slab-button(100%, $white, $dark-blue);
+    -webkit-order: 4;
+  }
+
+  .layers-toolbox {
+    display: none;
+
+    -webkit-order: 5;
+    white-space: nowrap;
+    overflow-x: scroll;
+
+    button {
+      -webkit-appearance: none;
+      border: 0;
+      padding: 0;
+
+      img {
+        height: 60px;
+        opacity: 0.8;
+        background-color: #2a2a2a;
+        padding: 0 15px;
+      }
+
+      p { font: inherit; }
+
+      display: inline-block;
+      margin: 10px;
+      width: 25%;
+
+      color: $green;
+      text-align: center;
+      font-weight: 700;
+      font-family: 'Quicksand' sans-serif;
+    }
+  }
+}
+
+@mixin _map {
+  #map-wrapper {
+    -webkit-flex: 1 1;
+    -webkit-order: 1;
+    display: -webkit-flex;
+  }
+
+  #map {
+    -webkit-flex: 1;
+  }
+
+  .leaflet-top { top: 30px; }
+  .leaflet-right { right: 10px; }
+}
+

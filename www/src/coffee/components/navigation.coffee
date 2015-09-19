@@ -1,19 +1,23 @@
+require('leaflet-usermarker')
+
 Config = require('../config.coffee')
-LayersControl = require('../templates/navigation.html.hbs')
+LayersToolbox = require('./navigation/layers_toolbox.coffee')
 
 module.exports = class NavigationComponent
   TEMPLATE = require('../templates/navigation.html.hbs')
 
   constructor: (@user, @project) ->
     @$el = $(Config.main_container)
+    @layers = {}
 
   show: ->
     @$el.html(TEMPLATE())
+    @toolbox = new LayersToolbox(@$el.find('.layers-toolbox'))
 
-    @addMap()
-    @addLayersToolbox()
+    @add_map()
+    @add_event_listeners()
 
-  addMap: ->
+  add_map: ->
     L.mapbox.accessToken = Config.mapbox_token
 
     @map = L.mapbox.map(
@@ -21,7 +25,40 @@ module.exports = class NavigationComponent
       attributionControl: false, zoomControl: false
     ).setView(
       [14.5278, 41.0229], 9
+    ).locate(
+      watch: true,
+      locate: true,
+      enableHighAccuracy: true
+      maxZoom: 16
     )
 
-  addLayersToolbox: ->
+  add_event_listeners: ->
+    @$el.find('.layers-button').click(@toolbox.toggle)
 
+    @toolbox.on('layer-activated', (layer_id) =>
+      Ramani.tileLayer(layer_id, (tileLayer) =>
+        @layers[layer_id] = tileLayer.setOpacity(0.3)
+        @layers[layer_id].addTo(@map)
+      )
+    )
+
+    @toolbox.on('layer-deactivated', (layer_id) =>
+      @map.removeLayer(@layers[layer_id])
+      @layers[layer_id] = null
+    )
+
+    @map.once('locationfound', (location) =>
+      @map.setView(location.latlng, 16)
+      @user_marker = L.userMarker(
+        location.latlng,
+        accuracy: 100, smallIcon: true
+      ).addTo(@map)
+
+      @add_marker_refresh()
+    )
+
+  add_marker_refresh: ->
+    @map.on('locationfound', (location) =>
+      @user_marker.setLatLng(location.latlng)
+      @user_marker.setAccuracy(location.accuracy)
+    )

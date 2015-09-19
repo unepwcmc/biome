@@ -1,5 +1,9 @@
 @import 'colors';
 
+.hidden {
+  display: none;
+}
+
 @mixin full-screen {
   box-sizing: border-box;
   position: absolute;
@@ -24,4 +28,17 @@
   background-color: $green;
   color: $white;
   text-transform: uppercase;
+}
+
+@mixin slab-button($width, $color, $bg-color) {
+  height: 60px;
+  width: $width;
+  border: 0;
+
+  color: $color;
+  background-color: $bg-color;
+
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
 }

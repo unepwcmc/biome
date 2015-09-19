@@ -1,3 +1,7 @@
+@import '../util';
+
+$header-height: 80px;
+
 @mixin header {
   header { @include _header; }
 }
@@ -10,7 +14,7 @@
   text-align: center;
 
   padding-top: 20px;
-  height: 80px;
+  height: $header-height;
 
   background-color: $green;
   color: $white;

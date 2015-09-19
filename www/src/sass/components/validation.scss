@@ -3,8 +3,9 @@
 
 @mixin validation {
   #validation_form { display: none; }
-  .validation-header { 
-    ul { 
+
+  .validation-header {
+    ul {
       list-style: none;
       li {
         display: inline;
@@ -18,8 +19,9 @@
         }
       }
     }
-  }   
+  }
+
   .validators {
     ul { list-style: none; }
   }
-} 
+}
