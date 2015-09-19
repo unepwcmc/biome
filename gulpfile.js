@@ -19,11 +19,13 @@ var paths = {
   coffee_and_hbs: './www/src/coffee/**/*',
   sass: './www/src/sass/**/*',
   fonts_src: './www/src/fonts/**/*',
+  images_src: './www/src/img/**/*',
 
   // dist
   js: './www/dist/js/',
   css: './www/dist/css/',
   fonts_dist: './www/dist/fonts/',
+  images_dist: './www/dist/img/',
 
   // extra
   coffeelint: './coffeelint.json'
@@ -61,6 +63,11 @@ gulp.task('fonts', function() {
     .pipe(gulp.dest(paths.fonts_dist));
 });
 
+gulp.task('images', function() {
+  gulp.src(paths.images_src)
+    .pipe(gulp.dest(paths.images_dist));
+});
+
 gulp.task('sass', function () {
   gulp.src(paths.sass)
     .pipe(sourcemaps.init())
@@ -76,4 +83,4 @@ gulp.task('watch', function() {
   gulp.watch(paths.fonts_src, ['fonts']);
 });
 
-gulp.task('default', ['watch', 'lint', 'coffee', 'sass', 'fonts']);
+gulp.task('default', ['watch', 'lint', 'coffee', 'sass', 'fonts', 'images']);
