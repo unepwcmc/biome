@@ -64,14 +64,14 @@
 
     ul {
       list-style: none;
-      padding: 0 25px;
+      padding: 0 0;
     }
 
     li {
       display:block;
       margin: 5px 0;
-      padding: 20px 13px;
-      border-radius: 5px;
+      padding: 25px 25px;
+      border-radius: 2px;
 
       &:active {
         background-color: $green;
@@ -79,17 +79,31 @@
       }
     }
 
+    .result-details {
+      margin-left: 85px;
+
+      p {
+        color: $black;
+        margin: 2px;
+      }
+
+      .title {
+        font-weight: 700;
+        font-family: 'Quicksand' sans-serif;
+        font-size: 16px;
+        color: $light-black;
+      }
+    }
+
     .image {
       width: 60px;
       height: 60px;
       border-radius: 30px;
-      background-color: $medium-light-grey;
       float: left;
-    }
 
-    .result-details {
-      margin-left: 85px;
-      .title { font-weight: bold; }
+      @for $i from 1 through 7 {
+        &.image-#{$i} { background: url("../img/project-#{$i}.png") 100%/100% 100% no-repeat; }
+      }
     }
   }
 }
