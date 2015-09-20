@@ -11,14 +11,21 @@ module.exports = class ValidationComponent
     @add_event_listener()
 
   add_event_listener: ->
-    @submit_form
-    Store.get('map').on('locationfound', (location) =>
+    @submit_form()
+    map = Store.get('map')
+    $('.cancel-button').on('click', =>
+      @$el.slideToggle()
+      $('.validation-buttons').hide()
+      $('.layers-button').show()
+    )
+    map.on('locationfound', (location) =>
       @$el.find('.coordinates').html(location.latlng.toString())
     )
 
   submit_form: ->
     $('#validators').submit( (e) ->
       e.preventDefault()
+      alert("Validation succeded")
       data = $(this).serialize()
       $.ajax({
         url: ''

@@ -27,6 +27,7 @@ module.exports = class HeaderComponent extends EventEmitter
   validation_mode_listener: ->
     $('.edit').on('click', (e) =>
       e.preventDefault()
+      $('.layers-toolbox').hide()
       $('#validation_form').slideToggle( =>
         @emit('validation-activated')
       )
