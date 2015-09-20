@@ -27,7 +27,15 @@
   @include layers-toolbox;
 
   #validation_form    { -webkit-order: 2; }
-  .validation-buttons { -webkit-order: 3; }
+  .validation-buttons { 
+    -webkit-order: 3;
+    button { 
+      @include slab-button(50%, $green, $white);
+      &:first-child { border-right: 1px $light-grey solid; }
+      border-top: 1px $medium-light-grey solid;
+      float: left;
+    }
+  }
 
   .layers-button {
     @include slab-button(100%, $white, $dark-blue);

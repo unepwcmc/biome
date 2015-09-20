@@ -1,6 +1,7 @@
 require('leaflet-usermarker')
 
 Config = require('../config.coffee')
+Store = require('../store.coffee')
 LayersToolbox = require('./navigation/layers_toolbox.coffee')
 
 module.exports = class NavigationComponent
@@ -55,6 +56,12 @@ module.exports = class NavigationComponent
       ).addTo(@map)
 
       @add_marker_refresh()
+    )
+
+    Store.get('header').on('validation-activated', =>
+      @map.invalidateSize()
+      $('.layers-button').toggle()
+      $('.validation-buttons').toggle()
     )
 
   add_marker_refresh: ->
