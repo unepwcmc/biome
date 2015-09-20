@@ -16,6 +16,7 @@ module.exports = class NavigationComponent
     @toolbox = new LayersToolbox(@$el.find('.layers-toolbox'))
 
     @add_map()
+    Store.set('map', @map)
     @add_event_listeners()
 
   add_map: ->

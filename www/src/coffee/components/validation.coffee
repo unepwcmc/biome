@@ -1,4 +1,5 @@
 Config = require('../config.coffee')
+Store = require('../store.coffee')
 validation_template = require('../templates/validation.html.hbs')
 
 module.exports = class ValidationComponent
@@ -10,7 +11,9 @@ module.exports = class ValidationComponent
     @add_event_listener()
 
   add_event_listener: ->
-   #@submit_form()
+    Store.get('map').on('locationfound', (location) =>
+      @$el.find('.coordinates').html(location.latlng.toString())
+    )
 
   submit_form: ->
     $('#validators').submit( (e) ->
