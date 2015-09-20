@@ -8,6 +8,7 @@ module.exports = class ProjectsListComponent
 
   constructor: ->
     @$el = $(Config.main_container)
+    @$el.removeClass("no-header")
 
   show: ->
     @$el.html(TEMPLATE())

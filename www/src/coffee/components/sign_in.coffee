@@ -11,6 +11,7 @@ module.exports = class SignInComponent
 
   show: ->
     @$el.html(TEMPLATE())
+    @$el.addClass("no-header")
     @add_event_listeners()
 
   add_event_listeners: ->

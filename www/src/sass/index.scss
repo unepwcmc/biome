@@ -26,6 +26,10 @@ html, body {
   height: 100%;
   box-sizing: border-box;
   overflow-y: hidden;
+  &.no-header {
+    top: 0;
+    margin-bottom: -80px;
+  }
 }
 
 @include sign-in;
