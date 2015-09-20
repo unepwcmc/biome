@@ -14,7 +14,9 @@ module.exports = class ValidationComponent
     @submit_form()
     map = Store.get('map')
     $('.cancel-button').on('click', =>
-      @$el.slideToggle()
+      @$el.slideToggle( ->
+        map.invalidateSize()
+      )
       $('.validation-buttons').hide()
       $('.layers-button').show()
     )
