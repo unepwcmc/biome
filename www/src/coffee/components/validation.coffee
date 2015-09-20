@@ -11,6 +11,7 @@ module.exports = class ValidationComponent
     @add_event_listener()
 
   add_event_listener: ->
+    @submit_form
     Store.get('map').on('locationfound', (location) =>
       @$el.find('.coordinates').html(location.latlng.toString())
     )

@@ -16,6 +16,7 @@ module.exports = class NavigationComponent
     @toolbox = new LayersToolbox(@$el.find('.layers-toolbox'))
 
     @add_map()
+    @add_markers()
     Store.set('map', @map)
     @add_event_listeners()
 
@@ -32,6 +33,18 @@ module.exports = class NavigationComponent
       locate: true,
       enableHighAccuracy: true
       maxZoom: 16
+    )
+
+  add_markers: ->
+    sql = new cartodb.SQL(user: 'carbon-tool')
+    project_id = Store.get('project_id')
+    query = "SELECT *, st_y(the_geom) as lat, st_x(the_geom) as lng FROM biome WHERE project_id = " + project_id
+    sql.execute(query).done( (data) =>
+      console.log(data.rows)
+      for row in data.rows
+        L.marker([row["lat"], row["lng"]]).addTo(@map).bindPopup(row["value"])
+    ).error( (errors) ->
+      console.log(errors)
     )
 
   add_event_listeners: ->
